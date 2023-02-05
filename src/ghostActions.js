@@ -11,8 +11,7 @@ function buttonManager() {
     buildForce.addEventListener('click', ()=>{
         buildForceState += 10;
         forceBar.style.width = buildForceState + '%';
-        messages.unshift(`${buildForceState}`);
-        displayMessages();
+        displayMessages(buildForceState);
     })
 }
 

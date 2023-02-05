@@ -1,7 +1,8 @@
 let messages = []
 
-function displayMessages() {
+function displayMessages(newMessage) {
     const messageDisplay = document.querySelector('.log');
+    messages.unshift(newMessage);
     while (messageDisplay.firstChild) {
         messageDisplay.removeChild(messageDisplay.firstChild)
     }
