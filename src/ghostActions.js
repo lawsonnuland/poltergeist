@@ -1,18 +1,24 @@
 import { saveData } from "./save";
 import { messages, displayMessages } from "./log";
 
+const buildForce = document.querySelector('.build-force');
+const forceBar = document.querySelector('.force-bar');
+const log = document.querySelector('.log');
+
 function buttonManager() {
-    const buildForce = document.querySelector('.build-force');
-    const forceBar = document.querySelector('.force-bar');
-    const log =document.querySelector('.log');
-    
-    let buildForceState =0;
+    let buildForceState = 0;
 
     buildForce.addEventListener('click', ()=>{
-        buildForceState += 10;
-        forceBar.style.width = buildForceState + '%';
-        displayMessages(buildForceState);
+        if(buildForceState<100) {
+            buildForceState += 10;
+            forceBar.style.width = buildForceState + '%';
+            displayMessages(buildForceState);
+        }
     })
 }
 
-export {buttonManager}
+function passives() {
+
+}
+
+export {buttonManager, passives}
